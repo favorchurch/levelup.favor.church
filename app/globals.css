@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: #131313;
+  color: #e2e2e2;
+  min-height: 100dvh;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+.material-symbols-outlined.fill {
+  font-variation-settings: "FILL" 1, "wght" 500, "GRAD" 0, "opsz" 24;
+}
+
+.tactile-primary {
+  box-shadow: 0 4px 0 0 #872100;
+}
+.tactile-primary:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 0 #872100;
+}
+.tactile-button {
+  box-shadow: 0 4px 0 #541100;
+}
+.tactile-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #541100;
+}
+.glass-card {
+  background: rgba(31, 31, 31, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.glow-success {
+  box-shadow: 0 0 20px rgba(14, 151, 234, 0.2);
+}
+.glow-primary {
+  box-shadow: 0 0 40px rgba(255, 87, 35, 0.3);
+}
+.glow-orange {
+  box-shadow: 0 0 20px rgba(255, 87, 35, 0.2);
+}
+.pulse-glow {
+  box-shadow: 0 0 20px rgba(255, 87, 35, 0.4);
+  animation: pulse-ring 2s infinite;
+}
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.02); opacity: 0.9; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.bg-celebration {
+  background: radial-gradient(circle at center, #3b0900 0%, #131313 100%);
+}
+
+textarea:focus {
+  outline: none;
+}
