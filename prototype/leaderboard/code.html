@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Leaderboard - LEVEL UP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#131313",
+                        "surface-container": "#1f1f1f",
+                        "on-primary-fixed": "#3b0900",
+                        "tertiary-fixed": "#cee5ff",
+                        "surface-dim": "#131313",
+                        "surface": "#131313",
+                        "surface-variant": "#353535",
+                        "secondary-fixed-dim": "#a7c8ff",
+                        "inverse-surface": "#e2e2e2",
+                        "inverse-primary": "#b12e00",
+                        "outline": "#ac897f",
+                        "surface-container-highest": "#353535",
+                        "on-secondary-container": "#002a54",
+                        "on-secondary-fixed": "#001c3b",
+                        "outline-variant": "#5c4038",
+                        "secondary-container": "#2e91ff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-container": "#002c49",
+                        "tertiary": "#98cbff",
+                        "surface-container-high": "#2a2a2a",
+                        "primary": "#ffb5a0",
+                        "on-tertiary": "#003354",
+                        "surface-tint": "#ffb5a0",
+                        "secondary": "#a7c8ff",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed": "#d5e3ff",
+                        "on-primary-fixed-variant": "#872100",
+                        "tertiary-container": "#0e97ea",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#004787",
+                        "tertiary-fixed-dim": "#98cbff",
+                        "on-background": "#e2e2e2",
+                        "inverse-on-surface": "#303030",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#ffdbd1",
+                        "surface-container-low": "#1b1b1b",
+                        "on-surface": "#e2e2e2",
+                        "primary-container": "#ff5723",
+                        "on-tertiary-fixed": "#001d33",
+                        "on-tertiary-fixed-variant": "#004a77",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "on-primary": "#601500",
+                        "on-primary-container": "#541100",
+                        "on-secondary": "#003060",
+                        "on-surface-variant": "#e5beb3",
+                        "on-error": "#690005",
+                        "surface-bright": "#393939"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "32px",
+                        "gutter-mobile": "16px",
+                        "xs": "4px",
+                        "xl": "48px",
+                        "margin-mobile": "20px",
+                        "sm": "12px",
+                        "base": "8px",
+                        "md": "20px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "title-md": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tactile-button {
+            box-shadow: 0 4px 0 #541100;
+        }
+        .tactile-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #541100;
+        }
+        .glow-orange {
+            box-shadow: 0 0 20px rgba(255, 87, 35, 0.2);
+        }
+        .bento-card {
+            background: #1f1f1f;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container/30">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-margin-mobile py-4 sticky top-0 z-50 bg-background/80 backdrop-blur-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="bolt">bolt</span>
+<h1 class="text-title-md font-headline-lg font-black text-primary tracking-tighter">LEVEL UP</h1>
+</div>
+<div class="bg-surface-container-high px-3 py-1.5 rounded-full flex items-center gap-2">
+<span class="text-label-bold font-label-bold text-primary">7 🔥</span>
+</div>
+</header>
+<main class="px-margin-mobile pb-32 pt-4 max-w-2xl mx-auto">
+<!-- Header Section -->
+<section class="mb-lg">
+<h2 class="text-headline-lg font-headline-lg mb-2">Hall of Faith</h2>
+<p class="text-on-surface-variant font-body-md">Push your limits. Claim your throne.</p>
+</section>
+<!-- Podium Section (Top 3) -->
+<div class="flex items-end justify-center gap-4 mb-xl mt-8 pt-8">
+<!-- Rank 2 -->
+<div class="flex flex-col items-center flex-1">
+<div class="relative mb-2">
+<div class="w-16 h-16 rounded-full border-4 border-slate-400 overflow-hidden bg-surface-container">
+<img alt="Rank 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdcQbNcrACVBj8-ZZxhmPYGLgnwvXCjbbzL-FLz6vQ7XBWZtSFbPIhjH_4xC7gBnkOZl2EPU1qOpy2d49jmSRWpMhfwtAY7cgo3vQA53mCRDfg7GIrBInIFNtKt9zoApjLQLmM9qXQDl3zWIJv2RnNJGfLmSVD3WTjKVYm9SyveF6-2LSBe_Egk-mattDfDlGPjYRWmIaYn2oFCAkjBMBwqZlgbSvqujEUYsPovoCPhLfIztVKeruQTt8QFZpf0U3W5p7wQbcIpCni"/>
+</div>
+<div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-slate-400 text-on-primary-fixed text-[10px] font-bold px-2 py-0.5 rounded-full">2ND</div>
+</div>
+<p class="font-label-bold text-label-bold text-center">Felix R.</p>
+<div class="h-24 w-full bg-slate-400/20 rounded-t-xl mt-2 flex flex-col items-center pt-3">
+<span class="text-primary font-label-bold">142 XP</span>
+</div>
+</div>
+<!-- Rank 1 -->
+<div class="flex flex-col items-center flex-1 -mt-8">
+<div class="relative mb-2">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<div class="w-20 h-20 rounded-full border-4 border-primary overflow-hidden bg-surface-container glow-orange">
+<img alt="Rank 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFeVPyyk6FupVZLvnUc4LRjwe65ZCdOUcpd1Qvltq0qW1FdGBwRlGvdJ1xsF1VphKubeNek0XlJfzEc_gsnpsFq9SI7SCWEyxf7NMXvo9AImi6rH3Ms3GiPGdNYdANXnZ7KXYl4NTSRcWwVJ3gnTrvvkRFCWUDhFAvgp0_z3dZWVRAg5P4XM_qNWv19c5C2Le2hCp7hCyGCDQxWTTVF7q-nVYd2bl10CDIq78zwiLuKvXwOUCnd2-_Ng5S9J4F96tMrrrin7MgFbcL"/>
+</div>
+<div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-primary text-on-primary-fixed text-[12px] font-black px-3 py-1 rounded-full">1ST</div>
+</div>
+<p class="font-label-bold text-label-bold text-center">Sarah K.</p>
+<div class="h-32 w-full bg-primary/20 rounded-t-xl mt-2 flex flex-col items-center pt-4">
+<span class="text-primary font-headline-lg text-title-md">185 XP</span>
+</div>
+</div>
+<!-- Rank 3 -->
+<div class="flex flex-col items-center flex-1">
+<div class="relative mb-2">
+<div class="w-16 h-16 rounded-full border-4 border-amber-700 overflow-hidden bg-surface-container">
+<img alt="Rank 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5Fe0mFfC32uX8k3PaAQCPdNg7xwO8gvGA1hCHvlHFqR6nEs5n_x5Rp5FUoN6UKgwCrSHrA9uwac2H8Zw7djoOdlIBk3fGg4r7gsWpomPQOF8DudnGEgr4eZGOZuo19X2XcSEcl8BYOACIeUa6FSdJX9IzP0iPeTzt_fxBkFf2DYOrXHp7KKyOFomwlcBoYex_AKZtAkdkM-P3rhghE877aq2-eDSfR4CXAeRdd1al4v0NBc6xfgsnUhUK02AB9Enuy0XfI17PF5qh"/>
+</div>
+<div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-amber-700 text-on-primary-fixed text-[10px] font-bold px-2 py-0.5 rounded-full">3RD</div>
+</div>
+<p class="font-label-bold text-label-bold text-center">Marcus T.</p>
+<div class="h-20 w-full bg-amber-700/20 rounded-t-xl mt-2 flex flex-col items-center pt-2">
+<span class="text-primary font-label-bold">128 XP</span>
+</div>
+</div>
+</div>
+<!-- Leaderboard List -->
+<div class="space-y-sm">
+<!-- User Rank Card (Highlighted) -->
+<div class="bg-primary-container p-4 rounded-xl flex items-center gap-4 glow-orange tactile-button">
+<span class="text-on-primary-container font-headline-lg text-title-md w-8 text-center">24</span>
+<div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center font-bold text-white">YOU</div>
+<div class="flex-1">
+<p class="font-label-bold text-white">Alex Johnson</p>
+<p class="text-xs text-on-primary-container/80 font-medium">Keep going! You're in the top 5%.</p>
+</div>
+<div class="flex items-center gap-1 bg-on-primary-container/20 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-bold text-white">42</span>
+</div>
+</div>
+<!-- Other Users -->
+<div class="bento-card p-4 rounded-xl flex items-center gap-4">
+<span class="text-on-surface-variant font-headline-lg text-title-md w-8 text-center">4</span>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="Zoe L." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6rEKxyb7xwVSorjZCoZkTOs-MIFoGAwOEcL2KjrClYUtzTJO0Qr8jelgKyFj3uoTvfhbsomGqc5bWhcE-pUVbe5HOsuZ4Zh5LKKs8a8A08Ygy7nPz--5150bFzv6jBjRDLJRIZQKjhCDvUdo4uaJxsL_gy02gfQBNBo_EwC7jllYvvDHMCG3LHgd2YNSpjT1ids1X9K88Qjpm27ARyNrlzItWByjENl_k4q_A6eiVkbYOnpdyThGvKrrVag-mRYBoVkP_7I1Yv9Vg"/>
+</div>
+<div class="flex-1">
+<p class="font-label-bold text-on-surface">Zoe L.</p>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span class="font-label-bold">115</span>
+</div>
+</div>
+<div class="bento-card p-4 rounded-xl flex items-center gap-4">
+<span class="text-on-surface-variant font-headline-lg text-title-md w-8 text-center">5</span>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="James W." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA82hoQg-H8rH87MXLSJNSP3ECR1irP1X3hgrqKhsM-OowIK_N-zuCX6OmxpzjIZSlC0_nDNC21ZLwW0inxHBapiqNAu8fXh66iB-iz7UfFi97cMu_i3EisjvdcVUenoEodMmuGY71JBoRu1dXjfBUna3Sb8Dpq9iJcvMTShI70Jl9jPRSkQf7ket3osX9wihg2oDXQEe5J5ZvqffzFHYopWVQpjQ7-S2pyMzzFCeaXPfZxYdyO-7NdsR6UgaImeKkdKESU6Vgi_lBk"/>
+</div>
+<div class="flex-1">
+<p class="font-label-bold text-on-surface">James W.</p>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span class="font-label-bold">102</span>
+</div>
+</div>
+<div class="bento-card p-4 rounded-xl flex items-center gap-4 opacity-80">
+<span class="text-on-surface-variant font-headline-lg text-title-md w-8 text-center">6</span>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="Maya V." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq8MfP47VoI_gRahahxqrF4JnUHqi2aEI-Y7PfpsdLGwN_waWimZBi_gFj8BE1YWmYpvd03nnYo9kRqLjVGjCjPk2nz4-TOo3vDQME6tay2lJ5L3cAM60C1rvwuXXmpO8F2Diu7C4wPZcbLJ919euVZBUcx8doODXrRtl424inBMAPOJY3eutU9fMljHporxNuPc4QI5U4Z3Vm4D1WRfCs-QDeJ8Mm1Yji9oDzD7QsxA6GVgKl3_S3vfV18kwfXWAEjX9T1ffJvbuH"/>
+</div>
+<div class="flex-1">
+<p class="font-label-bold text-on-surface">Maya V.</p>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span class="font-label-bold">98</span>
+</div>
+</div>
+<div class="bento-card p-4 rounded-xl flex items-center gap-4 opacity-60">
+<span class="text-on-surface-variant font-headline-lg text-title-md w-8 text-center">7</span>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="David S." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs49LV_TqI4QTjt7mG6ffsDMp4pi_DL8bGpnYr9tjckVSmIv2KJerPvC7V0Res3zbioFzstB-ZsqZYz3gLl-c4cOnWehpqp9fpPzqw1NMLxt-tJsNR0oUuMNEGwAF8LCdHbXlWiNw-sZg46R4N3S3kaxIqtHf_D6MKzOkAJbKJb8FJkQkWpEVVwwNPpFJvXaD5ghg3sx7uzMTTsH1cYt3tTehiVBHuC7Jh0XVRiuiYCqsLKMNnTxG37GCFLorh4Ylh4M_yrXgkbiFA"/>
+</div>
+<div class="flex-1">
+<p class="font-label-bold text-on-surface">David S.</p>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span class="font-label-bold">87</span>
+</div>
+</div>
+</div>
+<!-- Weekly Summary Card -->
+<div class="mt-lg bg-surface-container p-lg rounded-2xl border-l-4 border-primary">
+<h3 class="text-title-md font-headline-lg mb-sm">Rising Fast!</h3>
+<p class="text-body-md text-on-surface-variant mb-md leading-tight">You climbed <span class="text-primary font-bold">12 spots</span> this week. Complete 3 more daily verses to enter the Top 20.</p>
+<button class="w-full py-4 bg-primary-container text-on-primary-fixed font-headline-lg text-[14px] rounded-xl tactile-button flex items-center justify-center gap-2">
+                CONTINUE QUEST
+                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-safe bg-surface-container border-t-2 border-surface-variant shadow-lg">
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold scale-110" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard" style="font-variation-settings: 'FILL' 1;">leaderboard</span>
+<span class="text-label-sm font-label-sm">Leaderboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+<span class="text-label-sm font-label-sm">Badges</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

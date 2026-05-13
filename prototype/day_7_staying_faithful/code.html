@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#001d33",
+                    "secondary": "#a7c8ff",
+                    "on-surface-variant": "#e5beb3",
+                    "surface-dim": "#131313",
+                    "surface-variant": "#353535",
+                    "on-tertiary-container": "#002c49",
+                    "primary-fixed": "#ffdbd1",
+                    "surface-container-low": "#1b1b1b",
+                    "on-error-container": "#ffdad6",
+                    "inverse-surface": "#e2e2e2",
+                    "on-primary-container": "#541100",
+                    "on-error": "#690005",
+                    "primary": "#ffb5a0",
+                    "surface-tint": "#ffb5a0",
+                    "on-primary": "#601500",
+                    "primary-fixed-dim": "#ffb5a0",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-secondary-fixed-variant": "#004787",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-bright": "#393939",
+                    "secondary-container": "#2e91ff",
+                    "on-surface": "#e2e2e2",
+                    "tertiary-container": "#0e97ea",
+                    "surface": "#131313",
+                    "primary-container": "#ff5723",
+                    "tertiary": "#98cbff",
+                    "error": "#ffb4ab",
+                    "error-container": "#93000a",
+                    "tertiary-fixed-dim": "#98cbff",
+                    "tertiary-fixed": "#cee5ff",
+                    "secondary-fixed-dim": "#a7c8ff",
+                    "secondary-fixed": "#d5e3ff",
+                    "on-secondary-container": "#002a54",
+                    "on-secondary-fixed": "#001c3b",
+                    "on-tertiary": "#003354",
+                    "on-background": "#e2e2e2",
+                    "inverse-primary": "#b12e00",
+                    "background": "#131313",
+                    "inverse-on-surface": "#303030",
+                    "surface-container": "#1f1f1f",
+                    "outline-variant": "#5c4038",
+                    "outline": "#ac897f",
+                    "on-secondary": "#003060",
+                    "on-primary-fixed": "#3b0900",
+                    "surface-container-highest": "#353535",
+                    "on-primary-fixed-variant": "#872100",
+                    "on-tertiary-fixed-variant": "#004a77"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "20px",
+                    "xs": "4px",
+                    "xl": "48px",
+                    "margin-mobile": "20px",
+                    "lg": "32px",
+                    "sm": "12px",
+                    "gutter-mobile": "16px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "title-md": ["Montserrat"],
+                    "label-bold": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "label-sm": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                    "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .tactile-button {
+            box-shadow: 0 4px 0 0 #872100;
+        }
+        .tactile-button:active {
+            transform: translateY(4px);
+            box-shadow: 0 0px 0 0 #872100;
+        }
+        .glass-card {
+            background: rgba(31, 31, 31, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-surface-container-low docked full-width top-0 z-50 fixed w-full">
+<div class="flex justify-between items-center w-full px-margin-mobile h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container" data-icon="bolt">bolt</span>
+<h1 class="font-display-lg text-title-md tracking-tighter text-primary-container italic">LEVEL UP</h1>
+</div>
+<div class="bg-surface-container-high px-3 py-1 rounded-full flex items-center gap-2 border border-outline-variant">
+<span class="font-label-bold text-label-bold text-on-surface">7 🔥 1250 XP</span>
+</div>
+</div>
+</header>
+<main class="pt-20 px-margin-mobile space-y-lg max-w-2xl mx-auto">
+<!-- Finale Celebration Banner -->
+<section class="relative overflow-hidden rounded-xl bg-primary-container p-lg shadow-xl mt-4">
+<div class="absolute top-0 right-0 opacity-20 transform translate-x-1/4 -translate-y-1/4">
+<span class="material-symbols-outlined text-[120px]" data-icon="military_tech">military_tech</span>
+</div>
+<div class="relative z-10">
+<p class="font-label-bold text-label-sm text-on-primary-fixed uppercase tracking-widest mb-xs">WEEK 01 // FINALE</p>
+<h2 class="font-headline-lg text-headline-lg text-on-primary-container mb-xs">ABIDE IN CHRIST</h2>
+<div class="flex items-center gap-2 bg-on-primary-container/20 w-fit px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[18px] text-on-primary-container" data-icon="stars" data-weight="fill">stars</span>
+<span class="font-label-bold text-label-sm text-on-primary-container">LEVEL 1 COMPLETE</span>
+</div>
+</div>
+</section>
+<!-- Progress Track -->
+<section class="space-y-sm">
+<div class="flex justify-between items-end mb-xs">
+<h3 class="font-label-bold text-label-bold text-on-surface">WEEKLY PROGRESS</h3>
+<span class="font-label-bold text-label-bold text-primary">7/7 DAYS</span>
+</div>
+<div class="h-4 w-full bg-surface-container-highest rounded-full overflow-hidden flex gap-1 p-0.5">
+<div class="h-full w-full bg-primary-container rounded-full"></div>
+</div>
+</section>
+<!-- Scripture Card -->
+<article class="bg-surface-container rounded-xl p-lg border-l-4 border-primary shadow-sm space-y-md">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-title-md text-title-md text-primary">John 15:18–27</h4>
+<p class="font-label-bold text-label-sm text-on-surface-variant">THE WORLD'S HATRED</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="menu_book">menu_book</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed italic">
+                "If the world hates you, keep in mind that it hated me first... If they persecuted me, they will persecute you also."
+            </p>
+<div class="pt-base border-t border-surface-variant">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Staying connected to the Vine means sharing in His life—and sometimes His rejection. You aren't alone in the hallways.
+                </p>
+</div>
+</article>
+<!-- Bento Grid: Reflection & Challenge -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Reflection Section -->
+<section class="bg-surface-container-high rounded-xl p-md flex flex-col justify-between border border-outline-variant">
+<div>
+<div class="flex items-center gap-2 mb-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="psychology">psychology</span>
+<h5 class="font-label-bold text-label-bold text-on-surface">REFLECTION</h5>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-md">How do I stay faithful when my faith is challenged in school?</p>
+</div>
+<button class="w-full py-3 bg-surface-container-highest rounded-lg font-label-bold text-on-surface border border-outline-variant hover:bg-surface-bright transition-all text-left px-4">
+                    Write your response...
+                </button>
+</section>
+<!-- Challenge Section -->
+<section class="bg-tertiary-container rounded-xl p-md flex flex-col justify-between shadow-lg relative overflow-hidden group">
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-sm text-on-tertiary-container">
+<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+<h5 class="font-label-bold text-label-bold">DAILY CHALLENGE</h5>
+</div>
+<p class="font-body-md text-body-md text-on-tertiary-container mb-md">Share on IG or FB 1 takeaway from camp or this week’s devotion.</p>
+</div>
+<button class="w-full py-3 bg-on-tertiary-container text-tertiary-container rounded-lg font-label-bold flex items-center justify-center gap-2 group-hover:scale-[1.02] transition-transform">
+<span class="material-symbols-outlined text-[18px]" data-icon="share">share</span>
+                    SHARE STORY
+                </button>
+</section>
+</div>
+<!-- Weekly Badge Preview (Bento) -->
+<section class="bg-surface-container rounded-xl p-md flex items-center gap-lg border border-outline-variant">
+<div class="relative">
+<div class="absolute inset-0 bg-secondary blur-lg opacity-20 rounded-full"></div>
+<div class="relative bg-surface-container-highest w-20 h-20 rounded-full flex items-center justify-center border-2 border-secondary shadow-[0_0_15px_rgba(167,200,255,0.3)]">
+<span class="material-symbols-outlined text-secondary text-[40px]" data-icon="military_tech" data-weight="fill">military_tech</span>
+</div>
+</div>
+<div class="flex-1">
+<h4 class="font-title-md text-title-md text-on-surface">The Vine Dweller</h4>
+<p class="font-label-bold text-label-sm text-secondary">WEEK 1 ACHIEVEMENT UNLOCKED</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">You've completed every challenge for Week 1.</p>
+</div>
+</section>
+<!-- Final CTA -->
+<button class="w-full h-16 bg-primary-container text-on-primary-container rounded-xl font-headline-lg-mobile text-headline-lg-mobile tactile-button flex items-center justify-center gap-3 mt-lg mb-xl">
+            COMPLETE DAY 7
+            <span class="material-symbols-outlined text-[28px]" data-icon="check_circle">check_circle</span>
+</button>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface-container rounded-t-xl border-t-2 border-surface-variant shadow-lg">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-6 py-2 shadow-[0_4px_0_0_#872100] translate-y-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-bold text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-6 py-2 hover:bg-surface-bright transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-label-bold text-label-sm">Leagues</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-6 py-2 hover:bg-surface-bright transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+<span class="font-label-bold text-label-sm">Badges</span>
+</a>
+</nav>
+</body></html>

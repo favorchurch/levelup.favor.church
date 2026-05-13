@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Avatar Armory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pressable-primary {
+            box-shadow: 0 4px 0 0 #872100;
+        }
+        .pressable-primary:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 0 #872100;
+        }
+        .pressable-card {
+            box-shadow: 0 4px 0 0 #000000;
+        }
+        .inner-glow-blue {
+            box-shadow: inset 0 0 15px rgba(14, 151, 234, 0.2), 0 0 10px rgba(14, 151, 234, 0.1);
+        }
+        .inner-glow-orange {
+            box-shadow: inset 0 0 15px rgba(255, 87, 35, 0.2);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#004a77",
+                        "on-secondary": "#003060",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#541100",
+                        "on-error": "#690005",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#003354",
+                        "surface-bright": "#393939",
+                        "outline-variant": "#5c4038",
+                        "on-tertiary-container": "#002c49",
+                        "background": "#131313",
+                        "surface-dim": "#131313",
+                        "primary-fixed": "#ffdbd1",
+                        "surface": "#131313",
+                        "tertiary": "#98cbff",
+                        "surface-variant": "#353535",
+                        "surface-container": "#1f1f1f",
+                        "tertiary-fixed-dim": "#98cbff",
+                        "outline": "#ac897f",
+                        "on-primary-fixed-variant": "#872100",
+                        "inverse-surface": "#e2e2e2",
+                        "primary": "#ffb5a0",
+                        "on-tertiary-fixed": "#001d33",
+                        "on-surface": "#e2e2e2",
+                        "secondary": "#a7c8ff",
+                        "on-surface-variant": "#e5beb3",
+                        "tertiary-fixed": "#cee5ff",
+                        "on-primary-fixed": "#3b0900",
+                        "on-background": "#e2e2e2",
+                        "surface-container-low": "#1b1b1b",
+                        "inverse-on-surface": "#303030",
+                        "on-secondary-fixed": "#001c3b",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "secondary-fixed": "#d5e3ff",
+                        "on-secondary-container": "#002a54",
+                        "on-secondary-fixed-variant": "#004787",
+                        "surface-tint": "#ffb5a0",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#b12e00",
+                        "surface-container-high": "#2a2a2a",
+                        "tertiary-container": "#0e97ea",
+                        "surface-container-highest": "#353535",
+                        "primary-container": "#ff5723",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary-fixed-dim": "#a7c8ff",
+                        "secondary-container": "#2e91ff",
+                        "on-primary": "#601500"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter-mobile": "16px",
+                        "xl": "48px",
+                        "sm": "12px",
+                        "margin-mobile": "20px",
+                        "lg": "32px",
+                        "md": "20px",
+                        "xs": "4px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Montserrat"],
+                        "label-bold": ["Inter"],
+                        "title-md": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-surface sticky top-0 z-40 flex justify-between items-center w-full px-margin-mobile h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<h1 class="font-display-lg text-title-md tracking-tighter text-primary-container italic uppercase">LEVEL UP</h1>
+</div>
+<div class="bg-surface-container-low px-4 py-1.5 rounded-full border border-surface-variant">
+<span class="font-label-bold text-label-bold text-primary-container">7 🔥 1250 XP</span>
+</div>
+</header>
+<main class="px-margin-mobile pt-base flex flex-col gap-lg">
+<!-- Hero: Avatar Display -->
+<section class="relative">
+<div class="flex justify-between items-end mb-xs">
+<h2 class="font-headline-lg text-headline-lg-mobile">Avatar Armory</h2>
+<span class="font-label-bold text-label-bold text-tertiary-container uppercase tracking-widest">Level 12</span>
+</div>
+<div class="relative w-full aspect-[4/5] bg-surface-container rounded-xl overflow-hidden inner-glow-orange border-2 border-surface-variant flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A stylized 3D digital avatar character in a heroic pose, wearing futuristic tactical streetwear and a glowing orange visor. The background is a minimalist, dark tech-noir studio with dramatic orange rim lighting and floating digital particle effects. The overall mood is high-octane, youthful, and intensely focused, capturing a modern gaming aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZPYdTpRF0nUBPKs6jaztVWVlrZLYJwWvCl95E9uXs_JTw_WVrTsKZIjl7mYaiPlJFNpa_gMjD_LJOtBMqzIJrqwaeyEi8RhQJgP_EXHZvBRQXwr4mzW571K2j5AbsvGH7wXtCa3igw4TyeuZj_kfj6fShxtJR0qYcrG1j5UV7ivV3W-1sg_6_Cyyvj9wrv7vADH46sajZ1Lybnnt8avWYzLbHr60MbAOp8NaT_ad7QQBLtS94c3JdpXxcY7LaHMGS_9xneasfWzlV"/>
+<!-- Progress Overlay -->
+<div class="absolute bottom-0 left-0 w-full p-md bg-gradient-to-t from-black/80 to-transparent">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-bold text-label-sm text-on-surface-variant">XP PROGRESS</span>
+<span class="font-label-bold text-label-sm text-primary">75%</span>
+</div>
+<div class="w-full h-3 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[75%] rounded-r-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Equipped Items -->
+<section>
+<div class="flex items-center justify-between mb-md">
+<h3 class="font-headline-lg text-title-md">Equipped</h3>
+<span class="font-label-bold text-label-sm text-on-surface-variant px-3 py-1 bg-surface-container rounded-full">3 / 3 SLOTS</span>
+</div>
+<div class="grid grid-cols-1 gap-md">
+<!-- Item 1: Steel Sword -->
+<div class="bg-surface-container p-md rounded-xl border-l-4 border-primary-container flex items-center gap-md pressable-card">
+<div class="w-16 h-16 bg-surface-container-highest rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-3xl" style="font-variation-settings: 'FILL' 1;">swords</span>
+</div>
+<div class="flex-1">
+<p class="font-label-bold text-label-bold text-on-surface">Steel Sword</p>
+<p class="font-body-md text-label-sm text-on-surface-variant">Rare Weapon • +15 ATK</p>
+</div>
+<div class="bg-primary-container/10 border border-primary-container px-3 py-1 rounded-full">
+<span class="font-label-bold text-label-sm text-primary-container uppercase">Equipped</span>
+</div>
+</div>
+<!-- Item 2: Starter Jacket -->
+<div class="bg-surface-container p-md rounded-xl border-l-4 border-primary-container flex items-center gap-md pressable-card">
+<div class="w-16 h-16 bg-surface-container-highest rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-3xl" style="font-variation-settings: 'FILL' 1;">apparel</span>
+</div>
+<div class="flex-1">
+<p class="font-label-bold text-label-bold text-on-surface">Starter Jacket</p>
+<p class="font-body-md text-label-sm text-on-surface-variant">Common Armor • +5 DEF</p>
+</div>
+<div class="bg-primary-container/10 border border-primary-container px-3 py-1 rounded-full">
+<span class="font-label-bold text-label-sm text-primary-container uppercase">Equipped</span>
+</div>
+</div>
+<!-- Item 3: Loyal Dog -->
+<div class="bg-surface-container p-md rounded-xl border-l-4 border-primary-container flex items-center gap-md pressable-card">
+<div class="w-16 h-16 bg-surface-container-highest rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-3xl" style="font-variation-settings: 'FILL' 1;">pets</span>
+</div>
+<div class="flex-1">
+<p class="font-label-bold text-label-bold text-on-surface">Loyal Dog</p>
+<p class="font-body-md text-label-sm text-on-surface-variant">Legendary Companion • +20 LUK</p>
+</div>
+<div class="bg-primary-container/10 border border-primary-container px-3 py-1 rounded-full">
+<span class="font-label-bold text-label-sm text-primary-container uppercase">Equipped</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Available Upgrades Grid -->
+<section>
+<div class="flex items-center justify-between mb-md">
+<h3 class="font-headline-lg text-title-md">Available Upgrades</h3>
+<button class="font-label-bold text-label-sm text-primary flex items-center gap-1">
+                    Filter <span class="material-symbols-outlined text-sm">tune</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<!-- Upgrade 1: Unlocked -->
+<div class="bg-surface-container-high p-4 rounded-xl flex flex-col items-center gap-3 border border-surface-variant relative overflow-hidden group hover:border-primary transition-colors">
+<div class="absolute top-2 right-2">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="w-20 h-20 bg-surface-container-highest rounded-full flex items-center justify-center inner-glow-blue border border-tertiary-container/30">
+<span class="material-symbols-outlined text-tertiary text-4xl" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div class="text-center">
+<p class="font-label-bold text-label-bold">Iron Aegis</p>
+<p class="font-label-bold text-label-sm text-primary">LVL 15 REWARD</p>
+</div>
+<button class="w-full bg-primary-container py-2 rounded-lg font-label-bold text-label-sm text-on-primary-container pressable-primary uppercase">Equip</button>
+</div>
+<!-- Upgrade 2: Locked -->
+<div class="bg-surface-container p-4 rounded-xl flex flex-col items-center gap-3 border border-surface-variant opacity-60 grayscale">
+<div class="w-20 h-20 bg-surface-container-low rounded-full flex items-center justify-center border-2 border-dashed border-surface-variant">
+<span class="material-symbols-outlined text-on-surface-variant text-4xl">lock</span>
+</div>
+<div class="text-center">
+<p class="font-label-bold text-label-bold">Storm Boots</p>
+<p class="font-label-bold text-label-sm text-on-surface-variant">LVL 20 REWARD</p>
+</div>
+<div class="w-full h-8 flex items-center justify-center text-on-surface-variant text-xs italic font-label-bold">
+                        LOCKED
+                    </div>
+</div>
+<!-- Upgrade 3: Locked -->
+<div class="bg-surface-container p-4 rounded-xl flex flex-col items-center gap-3 border border-surface-variant opacity-60 grayscale">
+<div class="w-20 h-20 bg-surface-container-low rounded-full flex items-center justify-center border-2 border-dashed border-surface-variant">
+<span class="material-symbols-outlined text-on-surface-variant text-4xl">lock</span>
+</div>
+<div class="text-center">
+<p class="font-label-bold text-label-bold">Crown of Zeal</p>
+<p class="font-label-bold text-label-sm text-on-surface-variant">LVL 25 REWARD</p>
+</div>
+<div class="w-full h-8 flex items-center justify-center text-on-surface-variant text-xs italic font-label-bold">
+                        LOCKED
+                    </div>
+</div>
+<!-- Upgrade 4: Locked -->
+<div class="bg-surface-container p-4 rounded-xl flex flex-col items-center gap-3 border border-surface-variant opacity-60 grayscale">
+<div class="w-20 h-20 bg-surface-container-low rounded-full flex items-center justify-center border-2 border-dashed border-surface-variant">
+<span class="material-symbols-outlined text-on-surface-variant text-4xl">lock</span>
+</div>
+<div class="text-center">
+<p class="font-label-bold text-label-bold">Spirit Bow</p>
+<p class="font-label-bold text-label-sm text-on-surface-variant">LVL 30 REWARD</p>
+</div>
+<div class="w-full h-8 flex items-center justify-center text-on-surface-variant text-xs italic font-label-bold">
+                        LOCKED
+                    </div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface-container border-t-2 border-surface-variant shadow-lg">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-6 py-2 hover:bg-surface-bright transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-label-sm">Home</span>
+</a>
+<!-- Leagues -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-6 py-2 hover:bg-surface-bright transition-all" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-label-bold text-label-sm">Leagues</span>
+</a>
+<!-- Badges (Active - Best mapping for Avatar/Gear progress) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-6 py-2 shadow-[0_4px_0_0_#872100] translate-y-1 transition-all duration-75" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<span class="font-label-bold text-label-sm">Badges</span>
+</a>
+</nav>
+</body></html>

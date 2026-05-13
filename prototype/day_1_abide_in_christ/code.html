@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tactile-primary {
+            box-shadow: 0 4px 0 0 #872100;
+        }
+        .tactile-primary:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 0 #872100;
+        }
+        .glass-card {
+            background: rgba(31, 31, 31, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .glow-success {
+            box-shadow: 0 0 20px rgba(14, 151, 234, 0.2);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "on-tertiary-fixed": "#001d33",
+                "secondary": "#a7c8ff",
+                "on-surface-variant": "#e5beb3",
+                "surface-dim": "#131313",
+                "surface-variant": "#353535",
+                "on-tertiary-container": "#002c49",
+                "primary-fixed": "#ffdbd1",
+                "surface-container-low": "#1b1b1b",
+                "on-error-container": "#ffdad6",
+                "inverse-surface": "#e2e2e2",
+                "on-primary-container": "#541100",
+                "on-error": "#690005",
+                "primary": "#ffb5a0",
+                "surface-tint": "#ffb5a0",
+                "on-primary": "#601500",
+                "primary-fixed-dim": "#ffb5a0",
+                "surface-container-lowest": "#0e0e0e",
+                "on-secondary-fixed-variant": "#004787",
+                "surface-container-high": "#2a2a2a",
+                "surface-bright": "#393939",
+                "secondary-container": "#2e91ff",
+                "on-surface": "#e2e2e2",
+                "tertiary-container": "#0e97ea",
+                "surface": "#131313",
+                "primary-container": "#ff5723",
+                "tertiary": "#98cbff",
+                "error": "#ffb4ab",
+                "error-container": "#93000a",
+                "tertiary-fixed-dim": "#98cbff",
+                "tertiary-fixed": "#cee5ff",
+                "secondary-fixed-dim": "#a7c8ff",
+                "secondary-fixed": "#d5e3ff",
+                "on-secondary-container": "#002a54",
+                "on-secondary-fixed": "#001c3b",
+                "on-tertiary": "#003354",
+                "on-background": "#e2e2e2",
+                "inverse-primary": "#b12e00",
+                "background": "#131313",
+                "inverse-on-surface": "#303030",
+                "surface-container": "#1f1f1f",
+                "outline-variant": "#5c4038",
+                "outline": "#ac897f",
+                "on-secondary": "#003060",
+                "on-primary-fixed": "#3b0900",
+                "surface-container-highest": "#353535",
+                "on-primary-fixed-variant": "#872100",
+                "on-tertiary-fixed-variant": "#004a77"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "md": "20px",
+                "xs": "4px",
+                "xl": "48px",
+                "margin-mobile": "20px",
+                "lg": "32px",
+                "sm": "12px",
+                "gutter-mobile": "16px",
+                "base": "8px"
+              },
+              "fontFamily": {
+                "title-md": ["Montserrat"],
+                "label-bold": ["Inter"],
+                "body-lg": ["Inter"],
+                "headline-lg-mobile": ["Montserrat"],
+                "headline-lg": ["Montserrat"],
+                "label-sm": ["Inter"],
+                "display-lg": ["Montserrat"],
+                "body-md": ["Inter"]
+              },
+              "fontSize": {
+                "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full h-16 flex justify-between items-center px-margin-mobile bg-surface-container-low dark:bg-surface-container-low z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container" data-icon="bolt">bolt</span>
+<span class="font-display-lg text-title-md tracking-tighter text-primary-container italic">LEVEL UP</span>
+</div>
+<div class="bg-surface-variant px-3 py-1 rounded-full flex items-center gap-2">
+<span class="font-label-bold text-label-bold text-primary">7 🔥 1250 XP</span>
+</div>
+</header>
+<main class="pt-24 px-margin-mobile max-w-2xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-lg">
+<div class="relative w-full aspect-video rounded-xl overflow-hidden mb-md group">
+<img alt="Abide in Christ" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A cinematic, high-contrast digital art piece representing spiritual growth through vines and light. Lush, deep green grapevine branches with intricate textures intertwine across a dark, moody background. Beams of ethereal, electric orange light pierce through the foliage, creating a dramatic chiaroscuro effect. The mood is intense, motivational, and focused, utilizing a palette of deep charcoal, vibrant orange, and earthy greens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmre0jXpUfBAvt6-gMcxP4NLIwjq2P3cCjWnpN55553m1z7h51ApVbxjJZPgp3fiVsuw9YqMQ9rWeCo8mXSvEXHbwpaKFhhU005HkwkNSgPddsXEFNVLUfifTZDSOiEZ4HGSXNHS8X3OR8nU2aDIh7NxFEYXGkhcWH4W_PgrJ6E1aAw7SAPbCBAGT75eqQjDZtIMV31W23-Lz3Z8NsRWZvKhqS35Kl1HioQcRIQAQBH6-wLsXyitxrsAOYsu37kAxRv3uwV9OUVO1X"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<p class="font-label-bold text-label-sm text-primary uppercase tracking-widest mb-1">Week 01</p>
+<h1 class="font-headline-lg text-headline-lg-mobile text-on-surface uppercase">Abide In Christ</h1>
+</div>
+</div>
+<div class="flex items-center gap-2 mb-md">
+<div class="h-3 flex-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-1/7 rounded-r-full"></div>
+</div>
+<span class="font-label-bold text-label-sm text-on-surface-variant whitespace-nowrap">DAY 1 / 7</span>
+</div>
+</section>
+<!-- Scripture Bento Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md mb-lg">
+<!-- Verse Card -->
+<section class="bg-surface-container rounded-xl p-md border-l-4 border-primary-container flex flex-col justify-between min-h-[280px] md:col-span-2">
+<div>
+<div class="flex justify-between items-start mb-md">
+<span class="font-label-bold text-label-sm text-primary-container uppercase">John 15:1–3</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="menu_book">menu_book</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface italic leading-relaxed">
+                        "I am the true vine, and my Father is the gardener. He cuts off every branch in me that bears no fruit, while every branch that does bear fruit he prunes so that it will be even more fruitful."
+                    </p>
+</div>
+<div class="mt-md pt-md border-t border-surface-variant flex gap-4">
+<button class="flex-1 border-2 border-surface-variant py-3 rounded-lg font-label-bold text-label-bold hover:bg-surface-bright transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="volume_up">volume_up</span> LISTEN
+                    </button>
+<button class="flex-1 border-2 border-surface-variant py-3 rounded-lg font-label-bold text-label-bold hover:bg-surface-bright transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="share">share</span> SHARE
+                    </button>
+</div>
+</section>
+<!-- Reflection Card -->
+<section class="bg-surface-container-high rounded-xl p-md flex flex-col gap-sm border border-surface-variant">
+<div class="flex items-center gap-3 mb-xs">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary-container" data-icon="psychology">psychology</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface">Reflection</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">What areas of my life need pruning?</p>
+<textarea class="w-full bg-surface-container-lowest border-none rounded-lg mt-md p-md text-on-surface focus:ring-2 focus:ring-primary-container h-32 resize-none" placeholder="Write your thoughts..."></textarea>
+</section>
+<!-- Challenge Card -->
+<section class="bg-surface-container-high rounded-xl p-md flex flex-col gap-sm border border-surface-variant glow-success">
+<div class="flex items-center gap-3 mb-xs">
+<div class="w-10 h-10 rounded-lg bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface">Daily Quest</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Identify 1 distraction or habit that pulls you away from God and share it with your connect leader via PM.</p>
+<button class="mt-auto bg-surface-bright border-2 border-primary py-3 rounded-lg font-label-bold text-label-bold text-primary flex items-center justify-center gap-2 hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined" data-icon="send">send</span> CONTACT LEADER
+                </button>
+</section>
+</div>
+<!-- Sticky Footer Action -->
+<div class="fixed bottom-24 left-0 w-full px-margin-mobile z-40 max-w-2xl mx-auto right-0">
+<button class="w-full bg-primary-container text-on-primary-container py-5 rounded-xl font-headline-lg text-title-md uppercase tracking-widest tactile-primary flex items-center justify-center gap-4">
+<span class="material-symbols-outlined font-bold" data-icon="check_circle">check_circle</span>
+                COMPLETE DAY
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface-container dark:bg-surface-container rounded-t-xl border-t-2 border-surface-variant shadow-lg">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-6 py-2 shadow-[0_4px_0_0_#872100] translate-y-1 transition-all duration-75" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-bold text-label-sm">Home</span>
+</a>
+<!-- Leagues -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-6 py-2 hover:bg-surface-bright dark:hover:bg-surface-bright transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-label-bold text-label-sm">Leagues</span>
+</a>
+<!-- Badges -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-6 py-2 hover:bg-surface-bright dark:hover:bg-surface-bright transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+<span class="font-label-bold text-label-sm">Badges</span>
+</a>
+</nav>
+</body></html>

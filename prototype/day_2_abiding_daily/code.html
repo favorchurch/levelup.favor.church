@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-tertiary-fixed": "#001d33",
+                "secondary": "#a7c8ff",
+                "on-surface-variant": "#e5beb3",
+                "surface-dim": "#131313",
+                "surface-variant": "#353535",
+                "on-tertiary-container": "#002c49",
+                "primary-fixed": "#ffdbd1",
+                "surface-container-low": "#1b1b1b",
+                "on-error-container": "#ffdad6",
+                "inverse-surface": "#e2e2e2",
+                "on-primary-container": "#541100",
+                "on-error": "#690005",
+                "primary": "#ffb5a0",
+                "surface-tint": "#ffb5a0",
+                "on-primary": "#601500",
+                "primary-fixed-dim": "#ffb5a0",
+                "surface-container-lowest": "#0e0e0e",
+                "on-secondary-fixed-variant": "#004787",
+                "surface-container-high": "#2a2a2a",
+                "surface-bright": "#393939",
+                "secondary-container": "#2e91ff",
+                "on-surface": "#e2e2e2",
+                "tertiary-container": "#0e97ea",
+                "surface": "#131313",
+                "primary-container": "#ff5723",
+                "tertiary": "#98cbff",
+                "error": "#ffb4ab",
+                "error-container": "#93000a",
+                "tertiary-fixed-dim": "#98cbff",
+                "tertiary-fixed": "#cee5ff",
+                "secondary-fixed-dim": "#a7c8ff",
+                "secondary-fixed": "#d5e3ff",
+                "on-secondary-container": "#002a54",
+                "on-secondary-fixed": "#001c3b",
+                "on-tertiary": "#003354",
+                "on-background": "#e2e2e2",
+                "inverse-primary": "#b12e00",
+                "background": "#131313",
+                "inverse-on-surface": "#303030",
+                "surface-container": "#1f1f1f",
+                "outline-variant": "#5c4038",
+                "outline": "#ac897f",
+                "on-secondary": "#003060",
+                "on-primary-fixed": "#3b0900",
+                "surface-container-highest": "#353535",
+                "on-primary-fixed-variant": "#872100",
+                "on-tertiary-fixed-variant": "#004a77"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "md": "20px",
+                "xs": "4px",
+                "xl": "48px",
+                "margin-mobile": "20px",
+                "lg": "32px",
+                "sm": "12px",
+                "gutter-mobile": "16px",
+                "base": "8px"
+            },
+            "fontFamily": {
+                "title-md": ["Montserrat"],
+                "label-bold": ["Inter"],
+                "body-lg": ["Inter"],
+                "headline-lg-mobile": ["Montserrat"],
+                "headline-lg": ["Montserrat"],
+                "label-sm": ["Inter"],
+                "display-lg": ["Montserrat"],
+                "body-md": ["Inter"]
+            },
+            "fontSize": {
+                "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .btn-tactile {
+            box-shadow: 0 4px 0 0 #872100;
+        }
+        .btn-tactile:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 0 #872100;
+        }
+        .bento-card {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface h-16 flex justify-between items-center px-margin-mobile">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container text-2xl">bolt</span>
+<span class="font-display-lg text-title-md tracking-tighter text-primary-container italic">LEVEL UP</span>
+</div>
+<div class="bg-surface-container-high px-3 py-1 rounded-full">
+<span class="font-label-bold text-label-bold text-primary">7 🔥 1250 XP</span>
+</div>
+</header>
+<main class="mt-20 px-margin-mobile">
+<!-- Hero Section -->
+<div class="mb-lg">
+<p class="text-primary font-label-bold tracking-widest mb-xs uppercase">WEEK 01 // ABIDE IN CHRIST</p>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">DAY 02</h1>
+<div class="w-24 h-2 bg-primary-container rounded-full mt-sm"></div>
+</div>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Verse Card -->
+<div class="md:col-span-2 bento-card bg-surface-container rounded-xl p-lg relative overflow-hidden">
+<div class="absolute -right-8 -top-8 opacity-10">
+<span class="material-symbols-outlined text-[120px]">format_quote</span>
+</div>
+<div class="flex items-center gap-2 mb-sm text-primary">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-bold">SCRIPTURE</span>
+</div>
+<h2 class="font-title-md text-title-md mb-md">John 15:4–6</h2>
+<p class="font-body-lg text-body-lg italic leading-relaxed text-on-surface-variant">
+                    "Remain in me, as I also remain in you. No branch can bear fruit by itself; it must remain in the vine. Neither can you bear fruit unless you remain in me..."
+                </p>
+</div>
+<!-- Image/Visual Anchor -->
+<div class="bento-card bg-surface-container-low rounded-xl aspect-video md:aspect-square overflow-hidden relative">
+<img alt="Sunlight through forest trees" class="w-full h-full object-cover" data-alt="A cinematic low-angle photograph of sunlight piercing through the dense canopy of an ancient cedar forest. The lighting is dramatic and warm, creating long golden rays that illuminate floating dust motes. The atmosphere is quiet, contemplative, and spiritually charged, utilizing deep shadows and rich earth tones. High-contrast digital photography style with a professional, moody aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjGIrF-tw4NpaSJIq4kMBhbvFJCNfr6epcgnFsEh82MN1-QM8LIlMIVDtryj-tQRPsvHmL7bGgTZa4K3IofCjaxa20DrgfYvP8INwGebVuQO2g2E7G7Tx5Q4zi7MkDndMBWzVkFPcy2nv_svM2uuHKl1LHBeofRKYll_9LiRvn3Z8HiI_7yrYRpLu0qqWt7JNx9Youvc7GiXvZcGfToIDUp_aIj9WWcOvkYvjOlG4sE2Esoa17m-1RY3o1a50DYxxXlpH_wxgETH80"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+<div class="absolute bottom-md left-md">
+<span class="font-label-bold text-white text-label-bold">STAY CONNECTED</span>
+</div>
+</div>
+<!-- Reflection Card -->
+<div class="bento-card bg-surface-container rounded-xl p-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-sm text-tertiary">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-label-bold">REFLECTION</span>
+</div>
+<p class="font-body-lg text-body-lg mb-lg">What does “abiding” look like for me daily?</p>
+</div>
+<div class="bg-surface-container-high rounded-xl p-md border border-white/5">
+<p class="font-label-bold text-on-surface-variant italic">"In the noise of the morning, it looks like 5 minutes of silence..."</p>
+</div>
+</div>
+<!-- Challenge Card -->
+<div class="md:col-span-2 bento-card bg-secondary-container rounded-xl p-lg text-on-secondary-container">
+<div class="flex items-center justify-between mb-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+<span class="font-label-bold uppercase">MISSION CHALLENGE</span>
+</div>
+<div class="bg-on-secondary-container text-secondary-container px-3 py-1 rounded-full font-label-bold text-label-sm">
+                        +50 XP
+                    </div>
+</div>
+<p class="font-title-md text-title-md mb-lg leading-tight">
+                    Share a 3 minute voice note prayer to your connect group chat or connect leader.
+                </p>
+<div class="flex gap-sm">
+<button class="flex-1 bg-on-secondary-container text-secondary px-md py-3 rounded-xl font-label-bold flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="mic">mic</span>
+                        RECORD NOW
+                    </button>
+<button class="bg-on-secondary-container/20 text-on-secondary-container px-md py-3 rounded-xl font-label-bold">
+                        SKIP
+                    </button>
+</div>
+</div>
+</div>
+<!-- Completion Button -->
+<div class="mt-xl flex flex-col items-center">
+<button class="w-full max-w-sm bg-primary-container text-on-primary-container font-display-lg text-title-md py-5 rounded-2xl btn-tactile flex items-center justify-center gap-3 transition-transform">
+<span class="material-symbols-outlined" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                COMPLETE DAY
+            </button>
+<p class="mt-md font-label-sm text-label-sm text-on-surface-variant">2,492 OTHERS COMPLETED TODAY</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface-container rounded-t-xl border-t-2 border-surface-variant shadow-lg">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-6 py-2 shadow-[0_4px_0_0_#872100] translate-y-1" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-bold text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-6 py-2 hover:bg-surface-bright transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-label-bold text-label-sm">Leagues</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-6 py-2 hover:bg-surface-bright transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+<span class="font-label-bold text-label-sm">Badges</span>
+</a>
+</nav>
+</body></html>

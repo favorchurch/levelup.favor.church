@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>LEVEL UP | Quest Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#131313",
+                        "surface-container": "#1f1f1f",
+                        "on-primary-fixed": "#3b0900",
+                        "tertiary-fixed": "#cee5ff",
+                        "surface-dim": "#131313",
+                        "surface": "#131313",
+                        "surface-variant": "#353535",
+                        "secondary-fixed-dim": "#a7c8ff",
+                        "inverse-surface": "#e2e2e2",
+                        "inverse-primary": "#b12e00",
+                        "outline": "#ac897f",
+                        "surface-container-highest": "#353535",
+                        "on-secondary-container": "#002a54",
+                        "on-secondary-fixed": "#001c3b",
+                        "outline-variant": "#5c4038",
+                        "secondary-container": "#2e91ff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-container": "#002c49",
+                        "tertiary": "#98cbff",
+                        "surface-container-high": "#2a2a2a",
+                        "primary": "#ffb5a0",
+                        "on-tertiary": "#003354",
+                        "surface-tint": "#ffb5a0",
+                        "secondary": "#a7c8ff",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed": "#d5e3ff",
+                        "on-primary-fixed-variant": "#872100",
+                        "tertiary-container": "#0e97ea",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#004787",
+                        "tertiary-fixed-dim": "#98cbff",
+                        "on-background": "#e2e2e2",
+                        "inverse-on-surface": "#303030",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#ffdbd1",
+                        "surface-container-low": "#1b1b1b",
+                        "on-surface": "#e2e2e2",
+                        "primary-container": "#ff5723",
+                        "on-tertiary-fixed": "#001d33",
+                        "on-tertiary-fixed-variant": "#004a77",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "on-primary": "#601500",
+                        "on-primary-container": "#541100",
+                        "on-secondary": "#003060",
+                        "on-surface-variant": "#e5beb3",
+                        "on-error": "#690005",
+                        "surface-bright": "#393939"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "32px",
+                        "gutter-mobile": "16px",
+                        "xs": "4px",
+                        "xl": "48px",
+                        "margin-mobile": "20px",
+                        "sm": "12px",
+                        "base": "8px",
+                        "md": "20px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "title-md": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .pulse-glow {
+            box-shadow: 0 0 20px rgba(255, 87, 35, 0.4);
+            animation: pulse-ring 2s infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.02); opacity: 0.9; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        body {
+            min-height: 100dvh;
+        }
+        .quest-row-active {
+            border-left: 4px solid #ff5723;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-margin-mobile py-4 sticky top-0 z-50 bg-background/80 backdrop-blur-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-headline-lg" data-icon="bolt">bolt</span>
+<h1 class="text-title-md font-headline-lg font-black text-primary dark:text-primary tracking-tighter italic">LEVEL UP</h1>
+</div>
+<div class="bg-surface-container-high px-4 py-1.5 rounded-full flex items-center gap-2 border-2 border-primary-container/20">
+<span class="text-label-bold font-label-bold text-primary">7 🔥</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="relative px-margin-mobile pt-base max-w-md mx-auto">
+<!-- Hero Progress Header -->
+<section class="mb-6 mt-4 bg-surface-container rounded-xl p-md border-b-4 border-surface-variant relative overflow-hidden">
+<div class="relative z-10">
+<p class="text-label-sm font-label-sm uppercase tracking-widest text-primary mb-1">Current Quest</p>
+<h2 class="text-headline-lg font-headline-lg mb-4 leading-none">THE 21 DAY CHALLENGE</h2>
+<div class="space-y-2">
+<div class="flex justify-between text-label-bold font-label-bold mb-1">
+<span>Progress</span>
+<span>33%</span>
+</div>
+<div class="h-3 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-1/3 rounded-full transition-all duration-500"></div>
+</div>
+</div>
+</div>
+<!-- Aesthetic Graphic Background -->
+<div class="absolute -right-8 -top-8 opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="auto_awesome">auto_awesome</span>
+</div>
+</section>
+<!-- Quest List Journey -->
+<div class="space-y-3 mb-8">
+<!-- Day 1: Completed -->
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-4 opacity-70 border-l-4 border-primary">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined font-bold" data-icon="check">check</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-bold text-primary uppercase">Day 1</span>
+<span class="text-label-sm px-2 py-0.5 bg-surface-container-highest rounded text-on-surface-variant">Completed</span>
+</div>
+<p class="text-body-md font-bold">The Genesis</p>
+</div>
+</div>
+<!-- Day 2: Active -->
+<div class="bg-surface-container p-4 rounded-xl flex items-center gap-4 border-l-4 border-primary-container pulse-glow">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="play_arrow" data-weight="fill">play_arrow</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-bold text-primary-container uppercase">Day 2</span>
+<span class="text-label-sm px-2 py-0.5 bg-primary-container text-white rounded font-bold">Current</span>
+</div>
+<p class="text-body-md font-bold">The First Ascent</p>
+</div>
+</div>
+<!-- Day 3: Locked -->
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-4 opacity-40">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-bold uppercase">Day 3</span>
+</div>
+<p class="text-body-md font-bold">Divine Wisdom</p>
+</div>
+<span class="text-label-sm text-on-surface-variant">May 31</span>
+</div>
+<!-- Badge Reveal Row -->
+<div class="bg-tertiary-container/5 border-2 border-tertiary-container/20 border-dashed p-4 rounded-xl flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-2xl" data-icon="military_tech">military_tech</span>
+<span class="text-label-bold font-label-bold text-tertiary uppercase">Strength Badge</span>
+</div>
+<span class="text-label-sm text-tertiary/60">Unlock at Day 7</span>
+</div>
+<!-- Day 4: Locked -->
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-4 opacity-40">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-bold uppercase">Day 4</span>
+</div>
+<p class="text-body-md font-bold">The Endurance Test</p>
+</div>
+</div>
+<!-- Spacer / More items -->
+<div class="flex flex-col items-center py-4 opacity-20">
+<span class="material-symbols-outlined text-2xl" data-icon="more_vert">more_vert</span>
+</div>
+<!-- Day 21: Final Boss -->
+<div class="bg-surface-container-lowest border-2 border-surface-variant p-5 rounded-2xl flex items-center gap-4 opacity-40">
+<div class="w-14 h-14 rounded-xl bg-surface-container-highest flex items-center justify-center text-on-surface-variant rotate-45">
+<span class="material-symbols-outlined text-3xl -rotate-45" data-icon="workspace_premium">workspace_premium</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-bold uppercase">Day 21</span>
+<span class="text-label-sm text-primary">Quest End</span>
+</div>
+<p class="text-title-md font-black italic uppercase tracking-tighter">The Summit</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-safe bg-surface-container dark:bg-surface-container border-t-2 border-surface-variant shadow-lg rounded-t-xl">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary font-bold transition-transform scale-105" href="#">
+<span class="material-symbols-outlined" data-icon="home" data-weight="fill">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<!-- Leaderboard -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-60 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="text-label-sm font-label-sm">Leaderboard</span>
+</a>
+<!-- Badges -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-60 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+<span class="text-label-sm font-label-sm">Badges</span>
+</a>
+</nav>
+<!-- FAB (Contextual for Start) -->
+<div class="fixed bottom-24 right-margin-mobile z-40">
+<button class="bg-primary-container text-white p-4 rounded-2xl shadow-xl hover:scale-105 active:scale-95 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span class="text-label-bold font-label-bold uppercase">Continue Quest</span>
+</button>
+</div>
+<!-- Decorative Background Image Description -->
+<div class="hidden">
+<img data-alt="A vibrant digital abstract background for a gamified scripture app, featuring energetic orange and dark charcoal swatches with subtle grain texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMTYvhNOBfFoWONP1Y3CObKqzELrAxNB4KLnC2cNT1qRF6LtwFa-AK1H_-Bd33pkhaPw4M0RlAdjXJIyNk96KnFfe8xdobnGViOQX0MuIzpoieGQllJXLBE-LlpGEawWMdTrYl5AA-dbCizGsgZkawuwqmO4Gr6W3q3o6_XvbxJH4Qaqftb7NegAxlwlHIm9_NXgEBBx7fER7m_j6jKHBGgUECCihonkTplRuzW00C6OKJm3Ul97sbVc8KyS594nvdz0TajUkgApeS"/>
+</div>
+</body></html>
